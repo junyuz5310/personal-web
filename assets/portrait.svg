@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Portrait placeholder">
+  <rect width="400" height="400" fill="#f3e5e3"/>
+  <circle cx="200" cy="200" r="86" fill="#a8322d" opacity="0.14"/>
+  <circle cx="200" cy="200" r="34" fill="#a8322d" opacity="0.55"/>
+  <text x="200" y="352" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#a8322d" opacity="0.6">JZ</text>
+</svg>
