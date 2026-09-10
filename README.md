@@ -26,33 +26,33 @@ python3 -m http.server 44101 --bind ::
 # open http://<devserver>:44101/index.html
 ```
 
-## Deploy to GitHub Pages
+## Deploy
+
+Hosted on GitHub Pages. One-time setup, done by the repo owner in the browser:
+
+1. Make the repo public: **Settings** → **General** → scroll to **Danger Zone** →
+   **Change visibility** → Public. Pages requires this on a free account.
+2. **Settings** → **Pages** (left sidebar, under "Code and automation").
+3. Under **Build and deployment**, set **Source** to `Deploy from a branch`.
+4. Set **Branch** to `main` and the folder to `/ (root)`, then **Save**.
+5. Wait 1–2 minutes and refresh — the page will show `Your site is live at …`.
+
+The site lands at `https://<owner>.github.io/personal-web/`, or at
+`https://<owner>.github.io/` if the repo is renamed to `<owner>.github.io`.
+
+A custom domain can be attached later on the same **Pages** settings screen.
+
+### Publishing changes
+
+After the one-time setup there is no deploy command — pushing is the deploy:
 
 ```bash
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin git@github.com:<username>/personal-web.git
-git push -u origin main
+git add -A
+git commit -m "Update publications"
+git push
 ```
 
-Then enable Pages, in the repo's own settings (not on the GitHub Pages site):
-
-1. Go to `github.com/<username>/personal-web/settings/pages` — or: repo home → the
-   **Settings** tab at the far right of the top tab row → **Pages** in the left sidebar,
-   under "Code and automation".
-2. Under **Build and deployment**, set **Source** to `Deploy from a branch`.
-3. Set **Branch** to `main` and the folder to `/ (root)`, then **Save**.
-4. Wait 1–2 minutes and refresh — the same page will show `Your site is live at …`.
-
-Do this *after* the push: the branch dropdown is empty until the repo has commits.
-The **Settings** tab is only visible to the repo owner, and Pages on a free account
-requires a public repo (private repos need GitHub Pro).
-
-There is no server to start — GitHub serves the files directly. The site lands at
-`https://<username>.github.io/personal-web/`, or at `https://<username>.github.io/`
-if the repo is named `<username>.github.io`.
+GitHub rebuilds automatically and the live site updates within a minute or two.
 
 All internal links are relative, so the site works from either a subpath or the domain root.
 
